@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>غذاخوری اورامان | طعم اصیل کردستانی</title>
+    <!-- بوت استرپ ۵ -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- آیکون‌های بوت استرپ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <!-- فونت فارسی Vazirmatn -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Vazirmatn, sans-serif;
+        background-color: #fefefe;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px 15px;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #ff9a3c 0%, #ff6f3c 100%);
+        color: white;
+        border-radius: 15px;
+        padding: 40px 25px;
+        margin-bottom: 40px;
+        box-shadow: 0 5px 20px rgba(255, 106, 60, 0.2);
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+
+      .header .lead {
+        font-size: 1.3rem;
+        opacity: 0.95;
+      }
+
+      .header .mt-2 {
+        background: rgba(255, 255, 255, 0.15);
+        display: inline-block;
+        padding: 8px 25px;
+        border-radius: 50px;
+        margin-top: 20px;
+      }
+
+      .menu-section {
+        background: white;
+        border-radius: 15px;
+        padding: 35px 30px;
+        margin-bottom: 35px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        border: 1px solid #f0f0f0;
+      }
+
+      .menu-title {
+        color: #222;
+        border-bottom: 2px solid #ff9a3c;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      /* اینجا اصلاح شده - ساختار ساده‌تر */
+      .menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 15px;
+        border-bottom: 1px dashed #eee;
+        transition: all 0.3s ease;
+      }
+
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+
+      .menu-item:hover {
+        background-color: rgba(255, 154, 60, 0.05);
+        padding-right: 20px;
+        border-radius: 10px;
+      }
+
+      .food-info {
+        flex: 1;
+      }
+
+      .food-name {
+        color: #222;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .food-desc {
+        color: #666;
+        font-size: 0.95rem;
+        margin-top: 5px;
+        line-height: 1.5;
+      }
+
+      .price {
+        background: linear-gradient(135deg, #28a745 0%, #20bf55 100%);
+        color: white;
+        padding: 9px 20px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        min-width: 150px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.15);
+        transition: all 0.3s;
+        margin-right: 10px;
+      }
+      .menu-item:hover .price {
+        transform: scale(1.05);
+        box-shadow: 0 7px 20px rgba(40, 167, 69, 0.25);
+      }
+
+      .contact-box {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border-radius: 15px;
+        padding: 35px 30px;
+        margin-top: 30px;
+        border-right: 5px solid #1a73e8;
+        box-shadow: 0 8px 25px rgba(27, 115, 232, 0.1);
+      }
+
+      .contact-box h3 {
+        color: #2e7d32;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .contact-box p {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 25px;
+        color: #444;
+      }
+
+      .contact-link {
+        color: #2e7d32;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.4rem;
+        background: white;
+        padding: 15px 30px;
+        border-radius: 12px;
+        display: inline-block;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 2px solid transparent;
+        transition: all 0.3s;
+      }
+
+      .contact-link:hover {
+        background: #2e7d32;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(27, 115, 232, 0.2);
+        text-decoration: none;
+      }
+
+      .address-section {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 25px;
+        border-right: 4px solid #1a73e8;
+      }
+
+      footer {
+        margin-top: 50px;
+        padding-top: 25px;
+        border-top: 1px solid #eee;
+        color: #666;
+        text-align: center;
+      }
+
+      footer p:first-child {
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      /* ریسپانسیو */
+      @media (max-width: 768px) {
+        .header {
+          padding: 30px 20px;
+        }
+
+        .header h1 {
+          font-size: 1.9rem;
+        }
+
+        .menu-section {
+          padding: 25px 20px;
+        }
+
+        .menu-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .price {
+          margin-top: 12px;
+          align-self: flex-start;
+          margin-right: 0;
+        }
+
+        .contact-link {
+          font-size: 1.2rem;
+          padding: 12px 25px;
+          display: block;
+          text-align: center;
+        }
+
+        .container {
+          padding: 0 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header h1 {
+          font-size: 1.7rem;
+        }
+
+        .header .lead {
+          font-size: 1.1rem;
+        }
+
+        .menu-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- هدر -->
+      <div class="header">
+        <h1><i class="bi bi-cup-hot-fill"></i> غذاخوری اورامان</h1>
+        <p class="lead mb-0">طعم اصیل کردستانی، قیمت مناسب</p>
+        <p class="mt-2">
+          <i class="bi bi-clock"></i> ساعات کاری: ۷ صبح تا ۸ شب
+        </p>
+      </div>
+
+      <!-- لیست غذاها -->
+      <div class="menu-section">
+        <h2 class="menu-title">غذای اصلی</h2>
+
+        <div class="menu-list">
+          <!-- غذا شماره ۱ -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="menu-item">
+                    <div class="food-info">
+                        <div class="food-name">چلو خورشت قیمه</div>
+                        <div class="food-desc">با سیب زمینی سرخ کرده</div>
+                    </div>
+                    <span class="price">۱۸۰,۰۰۰ تومان</span>
+                </div>
+                
+                <!-- غذا شماره ۲ -->
+                <div class="menu-item">
+                    <div class="food-info">
+                        <div class="food-name">چلو کباب</div>
+                        <div class="food-desc">یک سیخ کباب، یک سیخ گوجه</div>
+                    </div>
+                    <span class="price">۱۸۰,۰۰۰ تومان</span>
+                </div>
+                
+                <!-- غذا شماره ۳ -->
+                <div class="menu-item">
+                    <div class="food-info">
+                        <div class="food-name">چلو جوجه</div>
+                        <div class="food-desc">یک سیخ جوجه، یک سیخ گوجه</div>
+                    </div>
+                    <span class="price">۱۶۰,۰۰۰ تومان</span>
+                </div>
+                
+                <!-- غذا شماره ۴ -->
+                <div class="menu-item">
+                    <div class="food-info">
+                        <div class="food-name">چلو مرغ</div>
+                        <div class="food-desc">سیب زمینی سرخ کرده</div>
+                    </div>
+                    <span class="price">۱۸۰,۰۰۰ تومان</span>
+                </div>
+                
+                <!-- غذا شماره ۵ -->
+                <div class="menu-item">
+                    <div class="food-info">
+                        <div class="food-name">قیمه گوجه</div>
+                        <div class="food-desc">با سنگک و لواش</div>
+                    </div>
+                    <span class="price">۱۸۰,۰۰۰ تومان</span>
+                </div>
+                
+                <!-- غذا شماره ۶ -->
+                <div class="menu-item">
+                    <div class="food-info">
+                        <div class="food-name">چلو وزیری</div>
+                        <div class="food-desc">کوبیده، گوجه، جوجه</div>
+                    </div>
+                    <span class="price">۲۵۰,۰۰۰ تومان</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- بخش تماس -->
+        <div class="contact-box">
+            <h3><i class="bi bi-telephone"></i> تماس برای سفارش</h3>
+            <p>برای سفارش تلفنی با شماره زیر تماس بگیرید:</p>
+            
+            <div class="text-center">
+                <a href="tel:09901120662" class="contact-link">
+                    <i class="bi bi-phone"></i> ۰۹۹۰-۱۱۲۰۶۶۲
+                </a>
+            </div>
+            
+            <div class="address-section mt-4">
+                <h5><i class="bi bi-geo-alt"></i> آدرس</h5>
+                <p class="mb-1">سنندج، خیابان ۱۷ شهریور، جنب کلانتری ۱۵</p>
+                <small class="text-muted">پذیرش سفارش سازمانی برای ادارات و کارگاه‌ها</small>
+            </div>
+        </div>
+
+        <!-- فوتر -->
+        <footer>
+            <p>© ۱۴۰۳ - تمامی حقوق برای غذاخوری اورامان محفوظ است</p>
+            <p class="text-muted">ساعات کاری: ۷ صبح تا ۸ شب | همه روزه</p>
+        </footer>
+    </div>
+
+    <!-- اسکریپت بوت استرپ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

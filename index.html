@@ -1,331 +1,346 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>غذاخوری اورامان | طعم اصیل کردستانی</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary: #FF6B35;
-            --secondary: #FF9A3C;
-            --success: #28A745;
-            --light: #FFF8F0;
-            --dark: #333333;
-            --blue: #1A73E8;
-        }
-        
-        body {
-            font-family: Vazirmatn, sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            padding: 15px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
+      :root {
+        --primary: #ff6b35;
+        --secondary: #ff9a3c;
+        --success: #28a745;
+        --light: #fff8f0;
+        --dark: #333333;
+        --blue: #1a73e8;
+      }
+
+      body {
+        font-family: Vazirmatn, sans-serif;
+        background: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        padding: 15px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .main-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        color: white;
+        border-radius: 20px;
+        padding: 35px 25px;
+        margin-bottom: 30px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+      }
+
+      .restaurant-name {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .slogan {
+        font-size: 1.2rem;
+        opacity: 0.95;
+        margin-bottom: 15px;
+      }
+
+      .hours {
+        background: rgba(255, 255, 255, 0.15);
+        display: inline-block;
+        padding: 8px 25px;
+        border-radius: 50px;
+        font-size: 1rem;
+      }
+
+      .menu-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-top: 5px solid var(--primary);
+      }
+
+      .menu-title {
+        color: var(--primary);
+        font-size: 1.7rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-align: center;
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 10px;
+      }
+
+      .food-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 15px;
+        border-bottom: 1px dashed #eee;
+        transition: all 0.3s ease;
+      }
+
+      .food-item:hover {
+        background: rgba(255, 107, 53, 0.05);
+        padding-right: 20px;
+        border-radius: 10px;
+      }
+
+      .food-item:last-child {
+        border-bottom: none;
+      }
+
+      .food-name {
+        color: var(--dark);
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .food-desc {
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      .price {
+        background: var(--success);
+        color: white;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        min-width: 140px;
+        text-align: center;
+      }
+
+      .drink-section {
+        background: white;
+        /* border-right: 5px solid #ffffff; */
+      }
+
+      .drink-price {
+        background: #4caf50;
+      }
+
+      .contact-box {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 25px;
+        border-right: 5px solid var(--blue);
+      }
+
+      .contact-title {
+        color: var(--blue);
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .phone-link {
+        display: inline-block;
+        background: white;
+        color: var(--blue);
+        font-size: 1.4rem;
+        font-weight: 800;
+        padding: 15px 30px;
+        border-radius: 12px;
+        text-decoration: none;
+        margin: 15px auto;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: all 0.3s;
+      }
+
+      .phone-link:hover {
+        background: var(--blue);
+        color: white;
+        text-decoration: none;
+      }
+
+      .address-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        border-right: 4px solid var(--blue);
+      }
+
+      footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        color: #666;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
         .main-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 35px 25px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+          padding: 25px 20px;
         }
-        
+
         .restaurant-name {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
+          font-size: 1.8rem;
         }
-        
-        .slogan {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin-bottom: 15px;
-        }
-        
-        .hours {
-            background: rgba(255, 255, 255, 0.15);
-            display: inline-block;
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-size: 1rem;
-        }
-        
+
         .menu-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--primary);
+          padding: 25px 20px;
         }
-        
-        .menu-title {
-            color: var(--primary);
-            font-size: 1.7rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-        }
-        
+
         .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 15px;
-            border-bottom: 1px dashed #eee;
-            transition: all 0.3s ease;
+          flex-direction: column;
+          align-items: flex-start;
         }
-        
-        .food-item:hover {
-            background: rgba(255, 107, 53, 0.05);
-            padding-right: 20px;
-            border-radius: 10px;
-        }
-        
-        .food-item:last-child {
-            border-bottom: none;
-        }
-        
-        .food-name {
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .food-desc {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
+
         .price {
-            background: var(--success);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            min-width: 140px;
-            text-align: center;
+          margin-top: 10px;
+          align-self: flex-start;
         }
-        
-        .drink-section {
-            background: #E8F5E9;
-            border-right: 5px solid #4CAF50;
-        }
-        
-        .drink-price {
-            background: #4CAF50;
-        }
-        
-        .contact-box {
-            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
 
-border-radius: 15px;
-            padding: 30px;
-            margin-top: 25px;
-            border-right: 5px solid var(--blue);
-        }
-        
-        .contact-title {
-            color: var(--blue);
-            font-size: 1.7rem;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-        
         .phone-link {
-            display: inline-block;
-            background: white;
-            color: var(--blue);
-            font-size: 1.4rem;
-            font-weight: 800;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            margin: 15px auto;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s;
+          font-size: 1.2rem;
+          padding: 12px 25px;
+          display: block;
         }
-        
-        .phone-link:hover {
-            background: var(--blue);
-            color: white;
-            text-decoration: none;
-        }
-        
-        .address-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border-right: 4px solid var(--blue);
-        }
-        
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .main-header {
-                padding: 25px 20px;
-            }
-            
-            .restaurant-name {
-                font-size: 1.8rem;
-            }
-            
-            .menu-card {
-                padding: 25px 20px;
-            }
-            
-            .food-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .price {
-                margin-top: 10px;
-                align-self: flex-start;
-            }
-            
-            .phone-link {
-                font-size: 1.2rem;
-                padding: 12px 25px;
-                display: block;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <!-- هدر -->
-        <div class="main-header">
-            <h1 class="restaurant-name">
-                <i class="bi bi-cup-hot-fill"></i> غذاخوری اورامان
-            </h1>
-            <p class="slogan">طعم اصیل کردستانی، قیمت مناسب</p>
-            <div class="hours">
-                <i class="bi bi-clock"></i> ۷ صبح تا ۸ شب
-            </div>
+      <!-- هدر -->
+      <div class="main-header">
+        <h1 class="restaurant-name">
+          <i class="bi bi-cup-hot-fill"></i> غذاخوری اورامان
+        </h1>
+        <p class="slogan">طعم اصیل کردستانی، قیمت مناسب</p>
+        <div class="hours"><i class="bi bi-clock"></i> ۷ صبح تا ۸ شب</div>
+      </div>
+
+      <!-- غذای اصلی -->
+      <div class="menu-card">
+        <h2 class="menu-title">غذای اصلی</h2>
+
+        <div class="food-item">
+          <div>
+            <div class="food-name">چلو خورشت قیمه</div>
+            <div class="food-desc">با سیب زمینی سرخ کرده</div>
+          </div>
+          <span class="price">۱۸۰,۰۰۰ تومان</span>
         </div>
 
-        <!-- غذای اصلی -->
-        <div class="menu-card">
-            <h2 class="menu-title">غذای اصلی</h2>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">چلو خورشت قیمه</div>
-                    <div class="food-desc">با سیب زمینی سرخ کرده</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
-            </div>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">چلو کباب</div>
-                    <div class="food-desc">یک سیخ کباب، یک سیخ گوجه</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
-            </div>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">چلو جوجه</div>
-                    <div class="food-desc">یک سیخ جوجه، یک سیخ گوجه</div>
-                </div>
-                <span class="price">۱۶۰,۰۰۰ تومان</span>
-            </div>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">چلو مرغ</div>
-                    <div class="food-desc">سیب زمینی سرخ کرده</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
-            </div>
-          <div class="food-item">
-                <div>
-                    <div class="food-name">قیمه گوجه</div>
-                    <div class="food-desc">با سنگک و لواش</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
-            </div>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">چلو وزیری</div>
-                    <div class="food-desc">کوبیده، گوجه، جوجه</div>
-                </div>
-                <span class="price">۲۵۰,۰۰۰ تومان</span>
-            </div>
+        <div class="food-item">
+          <div>
+            <div class="food-name">چلو کباب</div>
+            <div class="food-desc">یک سیخ کباب، یک سیخ گوجه</div>
+          </div>
+          <span class="price">۱۸۰,۰۰۰ تومان</span>
         </div>
 
-        <!-- نوشیدنی -->
-        <div class="menu-card drink-section">
-            <h2 class="menu-title">نوشیدنی</h2>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">نوشابه</div>
-                    <div class="food-desc">کوکاکولا، سون آپ، فانتا</div>
-                </div>
-                <span class="price drink-price">۲۵,۰۰۰ تومان</span>
-            </div>
-            
-            <div class="food-item">
-                <div>
-                    <div class="food-name">دوغ محلی</div>
-                    <div class="food-desc">خنک، طبیعی، بدون گاز</div>
-                </div>
-                <span class="price drink-price">۲۰,۰۰۰ تومان</span>
-            </div>
+        <div class="food-item">
+          <div>
+            <div class="food-name">چلو جوجه</div>
+            <div class="food-desc">یک سیخ جوجه، یک سیخ گوجه</div>
+          </div>
+          <span class="price">۱۶۰,۰۰۰ تومان</span>
         </div>
 
-        <!-- تماس -->
-        <div class="contact-box">
-            <h3 class="contact-title"><i class="bi bi-telephone"></i> سفارش تلفنی</h3>
-            
-            <div class="text-center">
-                <a href="tel:09901120662" class="phone-link">
-                    <i class="bi bi-phone"></i> ۰۹۹۰-۱۱۲۰۶۶۲
-                </a>
-            </div>
-            
-            <div class="address-box">
-                <h5><i class="bi bi-geo-alt"></i> آدرس</h5>
-                <p>سنندج، خیابان ۱۷ شهریور، جنب کلانتری ۱۵</p>
-                <small class="text-muted">پذیرش سفارش سازمانی برای ادارات و کارگاه‌ها</small>
-            </div>
+        <div class="food-item">
+          <div>
+            <div class="food-name">چلو مرغ</div>
+            <div class="food-desc">سیب زمینی سرخ کرده</div>
+          </div>
+          <span class="price">۱۸۰,۰۰۰ تومان</span>
+        </div>
+        <div class="food-item">
+          <div>
+            <div class="food-name">چلو قیمه گوجه</div>
+            <div class="food-desc"></div>
+          </div>
+          <span class="price">۱۸۰,۰۰۰ تومان</span>
         </div>
 
-        <!-- فوتر -->
-        <footer>
-            <p>© ۱۴۰۳ - تمامی حقوق برای غذاخوری اورامان محفوظ است</p>
-            <p class="text-muted">ساعات کاری: ۷ صبح تا ۸ شب | همه روزه</p>
-        </footer>
+        <div class="food-item">
+          <div>
+            <div class="food-name">چلو وزیری</div>
+            <div class="food-desc">کوبیده، گوجه، جوجه</div>
+          </div>
+          <span class="price">۲۵۰,۰۰۰ تومان</span>
+        </div>
+      </div>
+
+      <!-- نوشیدنی -->
+      <div class="menu-card drink-section">
+        <h2 class="menu-title">نوشیدنی</h2>
+
+        <div class="food-item">
+          <div>
+            <div class="food-name">نوشابه</div>
+            <div class="food-desc"></div>
+          </div>
+          <span class="price drink-price">۲۵,۰۰۰ تومان</span>
+        </div>
+
+        <div class="food-item">
+          <div>
+            <div class="food-name">دوغ محلی</div>
+            <div class="food-desc">خنک، طبیعی، بدون گاز</div>
+          </div>
+          <span class="price drink-price">۲۰,۰۰۰ تومان</span>
+        </div>
+      </div>
+
+      <!-- تماس -->
+      <div class="contact-box">
+        <h3 class="contact-title">
+          <i class="bi bi-telephone"></i> سفارش تلفنی
+        </h3>
+
+        <div class="text-center">
+          <a href="tel:09901120662" class="phone-link">
+            <i class="bi bi-phone"></i> ۰۹۹۰-۱۱۲۰۶۶۲
+          </a>
+        </div>
+
+        <div class="address-box">
+          <h5><i class="bi bi-geo-alt"></i> آدرس</h5>
+          <p>سنندج، خیابان ۱۷ شهریور، جنب کلانتری ۱۵</p>
+          <small class="text-muted"
+            >پذیرش سفارش سازمانی برای ادارات و کارگاه‌ها</small
+          >
+        </div>
+      </div>
+
+      <!-- فوتر -->
+      <footer>
+        <p>© ۱۴۰۳ - تمامی حقوق برای غذاخوری اورامان محفوظ است</p>
+        <p class="text-muted">ساعات کاری: ۷ صبح تا ۸ شب | همه روزه</p>
+      </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
+

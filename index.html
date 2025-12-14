@@ -1,448 +1,417 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>غذاخوری اورامان | طعم اصیل کردستانی</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <title>رستوران اورامان | منوی غذا</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary: #2a570a;
-            --secondary: #f03e3e;
-            --success: #438e05;
-            --light: #fff8f0;
-            --dark: #333333;
-            --gold: #d4af37;
-            --copper: #b87333;
-            --light-gold: #f5e8c8;
-        }
+      :root {
+        --primary: #800020; /* زرشکی لاکچری */
+        --gold: #d4af37; /* طلایی */
+        --light-bg: #fff9f0; /* بک‌گرند روشن */
+        --card-bg: #ffffff; /* سفید برای کارت */
+        --text-dark: #2c1810; /* قهوه‌ای تیره */
+        --text-light: #666666; /* متن روشن */
+      }
 
-        body {
-            font-family: Vazirmatn, sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            padding: 15px;
-        }
+      body {
+        font-family: Vazirmatn, sans-serif;
+        background: var(--light-bg);
+        color: var(--text-dark);
+        padding: 20px;
+        line-height: 1.6;
+      }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
 
-        .main-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 35px 25px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+      /* هدر */
+      .restaurant-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, var(--primary), #600018);
+        color: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(128, 0, 32, 0.2);
+      }
+
+      .restaurant-name {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: var(--gold);
+      }
+
+      .slogan {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 15px;
+      }
+
+      .hours {
+        display: inline-block;
+        background: rgba(212, 175, 55, 0.2);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 1rem;
+        border: 1px solid var(--gold);
+      }
+
+      /* کارت غذا */
+      .food-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #f0f0f0;
+      }
+
+      .food-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15);
+      }
+
+      .food-image {
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(45deg, var(--primary), var(--gold));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .food-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .food-content {
+        padding: 25px;
+      }
+
+      .food-name {
+        color: var(--primary);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .food-name span {
+        background: linear-gradient(135deg, var(--gold), #b8860b);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .food-desc {
+        color: var(--text-light);
+        font-size: 1rem;
+        margin-bottom: 15px;
+        line-height: 1.7;
+      }
+
+      .food-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .tag {
+        background: rgba(212, 175, 55, 0.1);
+        color: var(--primary);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+      }
+
+      /* نوشیدنی بدون عکس */
+      .drink-item {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-right: 4px solid var(--gold);
+      }
+
+      .drink-name {
+        color: var(--primary);
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .drink-price {
+        background: linear-gradient(135deg, #228b22, #32cd32);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+
+      /* لیست عمودی */
+      .menu-list {
+        display: grid;
+        gap: 20px;
+      }
+
+      .menu-section {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        color: var(--primary);
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 10px;
+      }
+
+      @media (min-width: 768px) {
+        .menu-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .menu-list {
+          grid-template-columns: 1fr;
         }
 
         .restaurant-name {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
+          font-size: 2rem;
         }
 
-        .slogan {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin-bottom: 15px;
+        .food-content {
+          padding: 20px;
         }
+      }
 
-        .hours {
-            background: rgba(255, 255, 255, 0.15);
-            display: inline-block;
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-size: 1rem;
-        }
+      /* فوتر ساده */
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
 
-        .menu-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            border-top: 5px solid var(--primary);
-        }
+      /* دکمه تماس */
+      .contact-btn {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 30px auto;
+        background: linear-gradient(135deg, var(--primary), #600018);
+        color: white;
+        text-align: center;
+        padding: 15px 30px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
+      }
 
-        .menu-title {
-            color: var(--primary);
-            font-size: 1.7rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-        }
-
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 15px;
-            border-bottom: 1px dashed #eee;
-            transition: all 0.3s ease;
-            flex-wrap: nowrap;
-        }
-
-        .food-item:hover {
-            background: rgba(255, 107, 53, 0.05);
-            padding-right: 20px;
-            border-radius: 10px;
-        }
-
-        .food-item:last-child {
-            border-bottom: none;
-        }
-
-        .food-info {
-            flex: 1;
-            min-width: 0;
-            padding-left: 15px;
-        }
-
-        .food-name {
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .food-desc {
-            color: #666;
-            font-size: 0.95rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .price {
-            background: var(--success);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1rem;
-            min-width: 130px;
-            text-align: center;
-            flex-shrink: 0;
-            margin-right: 10px;
-        }
-
-        .drink-section {
-            background: white;
-        }
-
-        .drink-price {
-            background: #438e05;
-        }
-
-        .contact-box {
-            background: linear-gradient(135deg, #8B7355 0%, #D4AF37 50%, #8B7355 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 25px;
-            border: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 115, 51, 0.1) 100%);
-            z-index: 1;
-        }
-
-        .contact-box > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-title {
-            color: white;
-            font-size: 1.7rem;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        .phone-link {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 800;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            margin: 15px auto;
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .phone-link:hover {
-            background: linear-gradient(135deg, var(--copper) 0%, var(--gold) 100%);
-            color: white;
-            text-decoration: none;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .address-box {
-            background: rgba(212, 175, 55, 0.15);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-        }
-
-        .address-box h5 {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .address-box p {
-            color: white;
-            font-weight: 500;
-        }
-
-        .address-box .text-muted {
-            color: rgba(255, 255, 255, 0.8) !important;
-        }
-
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .main-header {
-                padding: 25px 20px;
-            }
-
-            .restaurant-name {
-                font-size: 1.8rem;
-            }
-
-            .menu-card {
-                padding: 25px 20px;
-            }
-
-            .food-item {
-                padding: 15px 10px;
-            }
-
-            .food-name {
-                font-size: 1.1rem;
-            }
-
-            .price {
-                min-width: 120px;
-                font-size: 0.95rem;
-                padding: 7px 12px;
-                margin-right: 5px;
-            }
-
-            .phone-link {
-                font-size: 1.2rem;
-                padding: 12px 25px;
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .menu-card {
-                padding: 20px 15px;
-            }
-
-            .food-item {
-                padding: 12px 8px;
-                flex-wrap: nowrap;
-            }
-
-            .food-info {
-                padding-left: 10px;
-            }
-
-            .food-name {
-                font-size: 1rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .food-desc {
-                font-size: 0.8rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .price {
-                min-width: 110px;
-                font-size: 0.9rem;
-                padding: 6px 10px;
-                margin-right: 5px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .food-item {
-                flex-wrap: wrap;
-            }
-            
-            .price {
-                margin-top: 8px;
-                margin-right: 0;
-                align-self: flex-start;
-            }
-        }
+      .contact-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(128, 0, 32, 0.3);
+        color: white;
+        text-decoration: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- هدر -->
-        <div class="main-header">
-            <h1 class="restaurant-name">
-                <i class="bi bi-cup-hot-fill"></i> غذاخوری اورامان
-            </h1>
-            <p class="slogan">طعم اصیل کردستانی، قیمت مناسب</p>
-            <div class="hours"><i class="bi bi-clock"></i> ۷ صبح تا ۸ شب</div>
+      <!-- هدر رستوران -->
+      <div class="restaurant-header">
+        <h1 class="restaurant-name">
+          <i class="bi bi-cup-hot-fill"></i> رستوران اورامان
+        </h1>
+        <p class="slogan">طعم اصیل کردستانی با کیفیت عالی</p>
+        <div class="hours">
+          <i class="bi bi-clock"></i> ساعات کاری: ۷ صبح تا ۸ شب
         </div>
+      </div>
 
-        <!-- غذای اصلی -->
-        <div class="menu-card">
-            <h2 class="menu-title">غذای اصلی</h2>
-
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو خورشت قیمه</div>
-                    <div class="food-desc">با سیب زمینی سرخ کرده</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
+      <!-- غذای اصلی -->
+      <div class="menu-section">
+        <h2 class="section-title">غذای اصلی</h2>
+        <div class="menu-list">
+          <!-- غذا 1 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/ghorme.jpg" alt="چلو خورشت قیمه"> -->
+              <div>عکس چلو خورشت قیمه</div>
             </div>
-
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو کباب</div>
-                    <div class="food-desc">یک سیخ کباب، یک سیخ گوجه</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو خورشت قیمه
+                <span>۱۸۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc">با سیب زمینی سرخ کرده</p>
             </div>
+          </div>
 
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو جوجه</div>
-                    <div class="food-desc">یک سیخ جوجه، یک سیخ گوجه</div>
-                </div>
-                <span class="price">۱۶۰,۰۰۰ تومان</span>
+          <!-- غذا 2 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/kabab.jpg" alt="چلو کباب"> -->
+              <div>عکس چلو کباب</div>
             </div>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو کباب
+                <span>۱۸۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc">یک سیخ کباب، یک سیخ گوجه</p>
+            </div>
+          </div>
 
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو مرغ</div>
-                    <div class="food-desc">سیب زمینی سرخ کرده</div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
+          <!-- غذا 3 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/jooje.jpg" alt="چلو جوجه"> -->
+              <div>عکس چلو جوجه</div>
             </div>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو جوجه
+                <span>۱۶۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc">یک سیخ جوجه، یک سیخ گوجه</p>
+            </div>
+          </div>
 
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو قورمه سبزی</div>
-                    <div class="food-desc"></div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
+          <!-- غذا 4 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/morgh.jpg" alt="چلو مرغ"> -->
+              <div>عکس چلو مرغ</div>
             </div>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو مرغ
+                <span>۱۸۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc">سیب زمینی سرخ کرده</p>
+            </div>
+          </div>
 
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو قیمه گوجه</div>
-                    <div class="food-desc"></div>
-                </div>
-                <span class="price">۱۸۰,۰۰۰ تومان</span>
+          <!-- غذا 5 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/ghormesabzi.jpg" alt="چلو قورمه سبزی"> -->
+              <div>عکس چلو قورمه سبزی</div>
             </div>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو قورمه سبزی
+                <span>۱۸۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc"></p>
+            </div>
+          </div>
 
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">چلو وزیری</div>
-                    <div class="food-desc">کوبیده، گوجه، جوجه</div>
-                </div>
-                <span class="price">۲۵۰,۰۰۰ تومان</span>
+          <!-- غذا 6 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/ghimeh.jpg" alt="چلو قیمه گوجه"> -->
+              <div>عکس چلو قیمه گوجه</div>
             </div>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو قیمه گوجه
+                <span>۱۸۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc"></p>
+            </div>
+          </div>
+
+          <!-- غذا 7 -->
+          <div class="food-card">
+            <div class="food-image">
+              <!-- جایگزین کن با: <img src="images/vaziri.jpg" alt="چلو وزیری"> -->
+              <div>عکس چلو وزیری</div>
+            </div>
+            <div class="food-content">
+              <h3 class="food-name">
+                چلو وزیری
+                <span>۲۵۰,۰۰۰ تومان</span>
+              </h3>
+              <p class="food-desc">کوبیده، گوجه، جوجه</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- نوشیدنی -->
-        <div class="menu-card drink-section">
-            <h2 class="menu-title">نوشیدنی</h2>
+      <!-- نوشیدنی -->
+      <div class="menu-section">
+        <h2 class="section-title">نوشیدنی</h2>
+        <div style="max-width: 500px; margin: 0 auto">
+          <div class="drink-item">
+            <div class="drink-name">نوشابه</div>
+            <div class="drink-price">۲۵,۰۰۰ تومان</div>
+          </div>
 
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">نوشابه</div>
-                    <div class="food-desc"></div>
-                </div>
-                <span class="price drink-price">۲۵,۰۰۰ تومان</span>
-            </div>
-
-            <div class="food-item">
-                <div class="food-info">
-                    <div class="food-name">دوغ محلی</div>
-                    <div class="food-desc">خنک، طبیعی، بدون گاز</div>
-                </div>
-                <span class="price drink-price">۲۰,۰۰۰ تومان</span>
-            </div>
+          <div class="drink-item">
+            <div class="drink-name">دوغ محلی</div>
+            <div class="drink-price">۲۰,۰۰۰ تومان</div>
+          </div>
         </div>
+      </div>
 
-        <!-- تماس -->
-        <div class="contact-box">
-            <h3 class="contact-title">
-                <i class="bi bi-telephone"></i> سفارش تلفنی
-            </h3>
+      <!-- دکمه تماس -->
+      <a href="tel:09901120662" class="contact-btn">
+        <i class="bi bi-telephone"></i> سفارش تلفنی: 09901120662
+      </a>
 
-            <div class="text-center">
-                <a href="tel:09901120662" class="phone-link">
-                    <i class="bi bi-phone"></i> ۰۹۹۰-۱۱۲۰۶۶۲
-                </a>
-            </div>
-
-            <div class="address-box">
-                <h5><i class="bi bi-geo-alt"></i> آدرس</h5>
-                <p>سنندج، خیابان ۱۷ شهریور، جنب کلانتری ۱۵</p>
-                <small class="text-muted">پذیرش سفارش سازمانی برای ادارات و کارگاه‌ها</small>
-            </div>
-        </div>
-
-        <!-- فوتر -->
-        <footer>
-            <p>© ۱۴۰۳ - تمامی حقوق برای غذاخوری اورامان محفوظ است</p>
-            <p class="text-muted">ساعات کاری: ۷ صبح تا ۸ شب | همه روزه</p>
-        </footer>
+      <!-- فوتر -->
+      <div class="footer">
+        <p>© ۱۴۰۳ - رستوران اورامان | سنندج، خیابان ۱۷ شهریور</p>
+        <p class="text-muted">همه روزه از ۷ صبح تا ۸ شب در خدمت شما هستیم</p>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
+
+
 
 
 

@@ -1,0 +1,240 @@
+:root {
+  --primary: #800020; /* زرشکی لاکچری */
+  --gold: #d4af37; /* طلایی */
+  --light-bg: #fff9f0; /* بک‌گرند روشن */
+  --card-bg: #ffffff; /* سفید برای کارت */
+  --text-dark: #2c1810; /* قهوه‌ای تیره */
+  --text-light: #666666; /* متن روشن */
+}
+
+body {
+  font-family: Vazirmatn, sans-serif;
+  background: var(--light-bg);
+  color: var(--text-dark);
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* هدر */
+.restaurant-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, var(--primary), #600018);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(128, 0, 32, 0.2);
+}
+
+.restaurant-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+
+.slogan {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.hours {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.2);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  border: 1px solid var(--gold);
+}
+
+/* کارت غذا */
+.food-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15);
+}
+
+.food-image {
+  /* width: 80%;
+  height: 220px; */
+  background: linear-gradient(45deg, var(--primary), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.food-image img {
+  width: 634px;
+  height: 604px;
+  object-fit: cover;
+}
+
+.food-content {
+  padding: 25px;
+}
+
+.food-name {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-name span {
+  background: linear-gradient(135deg, var(--gold), #b8860b);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.food-desc {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.food-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tag {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* نوشیدنی بدون عکس */
+.drink-item {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-right: 4px solid var(--gold);
+}
+
+.drink-name {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.drink-price {
+  background: linear-gradient(135deg, #228b22, #32cd32);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* لیست عمودی */
+.menu-list {
+  display: grid;
+  gap: 20px;
+}
+
+.menu-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .menu-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-name {
+    font-size: 2rem;
+  }
+
+  .food-content {
+    padding: 20px;
+  }
+  .food-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* فوتر ساده */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* دکمه تماس */
+.contact-btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto;
+  background: linear-gradient(135deg, var(--primary), #600018);
+  color: white;
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(128, 0, 32, 0.3);
+  color: white;
+  text-decoration: none;
+}

@@ -198,10 +198,15 @@ body {
   .food-content {
     padding: 20px;
   }
-  .food-image {
+  /* .food-image {
     width: 100%;
     height: auto;
-  }
+  } */
+  .food-image img {
+  width: 634px;
+  height: 604px;
+  object-fit: cover;
+}
 }
 
 /* فوتر ساده */
